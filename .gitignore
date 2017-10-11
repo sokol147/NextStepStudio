@@ -9,6 +9,7 @@
 *.sass-cache
 *.swo
 *.swp
+*.psd
 *.vi
 *~
 
