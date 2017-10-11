@@ -1,0 +1,91 @@
+.main-screen{
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+}
+.header{
+	background-color: white;
+	position: relative;
+	padding: 33px 5%;
+	.logo{
+		position: absolute;
+		top:34%;
+	}
+	.nav{
+		display: flex;
+		justify-content: flex-end;
+		.menu{
+			color: black;
+			font-size: 20px;
+			text-transform: uppercase;
+			font-weight: 400;
+			&__item{
+				display: inline-block;
+				margin-left: 30px;
+				opacity: 0.6;
+				cursor: pointer;
+				transition: all .5s;
+				&.active, &:hover{
+					color: #000;
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+.panels{
+	overflow: hidden;
+	height: 100%;
+	display: flex;
+	.panel:first-child{
+		border-left: none;
+	}
+	.panel:last-child{
+		border-right: none;
+	}
+	.panel{
+		background-size: cover;
+		background-position: center;
+		color: #fff;
+		position: relative;
+		flex: 1;
+		display: flex;
+		align-items: flex-end;
+		transition: all .4s;
+		border-left: 1px solid white;
+		border-right: 1px solid white;
+		opacity: .4;
+		&:hover{
+			flex: 2;
+			opacity: 1;
+		}
+		&:hover > div{
+			opacity: 1;
+		}
+		&__content{
+			opacity: 0;
+			padding: 50px 30px 45px;
+			background-color: #fff;
+			color: #000;
+			transition: all .4s;
+		}
+		.project__name{
+			font-weight: bold;
+			font-size: 25px;
+			margin-top: 0;
+			margin-bottom: 25px;
+			text-transform: uppercase;
+		}
+		.project__descr{
+			font-size: 18px;
+			font-weight: 300;
+			margin-top: 0px;
+			margin-bottom: 35px;
+		}
+		.project__btn{
+			font-weight: 200;
+			cursor: pointer;
+		}
+	}
+}

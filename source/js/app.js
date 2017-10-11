@@ -1,7 +1,8 @@
-(function() {
-  'use strict';
-
-  setTimeout(function() {
-    document.querySelector('.greating_picture').classList.add('m--show');
-  }, 1000);
-})();
+document.body.onload = function(){
+	setTimeout(function(){
+		var preloader = document.getElementById('page-preloader');
+		if(!preloader.classList.contains('done')){
+			preloader.classList.add('done');
+		}
+	}, 4700);
+}
