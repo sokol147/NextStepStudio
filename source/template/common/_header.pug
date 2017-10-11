@@ -5,32 +5,38 @@
 			backGround: '../assets/img/projects/project-1.jpg',
 			projectName: 'project-1',
 			shortDescr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, qui.',
-			buttonText: 'showe more'
+			buttonText: 'showe more',
+			fullDescr: 'Lorem ipsum dolor sit amet. 1'
 		},{
 			backGround: '../assets/img/projects/project-2.jpg',
 			projectName: 'project-2',
 			shortDescr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, qui.',
-			buttonText: 'showe more'
+			buttonText: 'showe more',
+			fullDescr: 'Lorem ipsum dolor sit amet. 2'
 		},{
 			backGround: '../assets/img/projects/project-3.jpg',
 			projectName: 'project-3',
 			shortDescr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, qui.',
-			buttonText: 'showe more'
+			buttonText: 'showe more',
+			fullDescr: 'Lorem ipsum dolor sit amet. 3'
 		},{
 			backGround: '../assets/img/projects/project-4.jpg',
 			projectName: 'project-4',
 			shortDescr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, qui.',
-			buttonText: 'showe more'
+			buttonText: 'showe more',
+			fullDescr: 'Lorem ipsum dolor sit amet. 4'
 		},{
 			backGround: '../assets/img/projects/project-6.jpg',
 			projectName: 'project-5',
 			shortDescr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, qui.',
-			buttonText: 'showe more'
+			buttonText: 'showe more',
+			fullDescr: 'Lorem ipsum dolor sit amet. 5'
 		},{
 			backGround: '../assets/img/projects/project-5.jpg',
 			projectName: 'project-6',
 			shortDescr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, qui.',
-			buttonText: 'showe-more'
+			buttonText: 'showe-more',
+			fullDescr: 'Lorem ipsum dolor sit amet. 6'
 		}
 	]
 .main-screen
@@ -45,7 +51,30 @@
 	.panels
 		each item in projects
 			.panel(style=`background-image: url(${item.backGround})`)
-				.panel__content
-					h3.project__name= item.projectName
-					p.project__descr= item.shortDescr
-					a.project__btn= item.buttonText
+				a.panel__link(href='#')
+					.panel__content
+						h3.project__name= item.projectName
+						p.project__descr= item.shortDescr
+						p.project__btn= item.buttonText
+
+
+.project-description
+	ul.projects-full
+		li.project__content.active
+			.project-wrapper
+				p Lorem ipsum dolor sit amet.1
+		li.project__content
+			.project-wrapper
+				p Lorem ipsum dolor sit amet.2
+		li.project__content
+			.project-wrapper
+				p Lorem ipsum dolor sit amet.3
+		li.project__content
+			.project-wrapper
+				p Lorem ipsum dolor sit amet.4
+		li.project__content
+			.project-wrapper
+				p Lorem ipsum dolor sit amet.5
+		li.project__content
+			.project-wrapper
+				p Lorem ipsum dolor sit amet.6

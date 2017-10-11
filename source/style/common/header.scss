@@ -56,16 +56,22 @@
 		border-left: 1px solid white;
 		border-right: 1px solid white;
 		opacity: .4;
+		&__link{
+			height: 100%;
+			display: flex;
+			align-items: flex-end;
+			text-decoration: none;
+		}
 		&:hover{
 			flex: 2;
 			opacity: 1;
 		}
-		&:hover > div{
+		&:hover .panel__content{
 			opacity: 1;
 		}
 		&__content{
 			opacity: 0;
-			padding: 50px 30px 45px;
+			padding: 50px 0 45px 30px;
 			background-color: #fff;
 			color: #000;
 			transition: all .4s;
@@ -86,6 +92,18 @@
 		.project__btn{
 			font-weight: 200;
 			cursor: pointer;
+		}
+	}
+}
+
+// project description
+
+.projects-full{
+	.project__content{
+		display: none;
+		height: 100vh;
+		&.active{
+			display: block;
 		}
 	}
 }
