@@ -1,4 +1,3 @@
-- var menu = ['projects', 'reviews', 'about', 'contact']
 -
 	var projects = [
 		{
@@ -39,15 +38,12 @@
 			fullDescr: 'Lorem ipsum dolor sit amet. 6'
 		}
 	]
+
 .main-screen
 	header.header
 		a(href='#')
 			img.logo(src='assets/img/logo.svg')
-		nav.nav
-			ul.menu
-				each item in menu
-					li.menu__item
-						a.menu__link #{item}
+		+menu('menu', ['projects', 'reviews', 'about', 'contact'], 0)
 	.panels
 		each item in projects
 			.panel(style=`background-image: url(${item.backGround})`)

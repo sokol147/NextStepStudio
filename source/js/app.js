@@ -8,6 +8,8 @@ document.body.onload = function(){
 }
 
 $(document).ready(function(){
+
+// tabs for projects
 	$('.panel__link').on('click', function(e){
 		e.preventDefault();
 
@@ -17,5 +19,12 @@ $(document).ready(function(){
 
 		contentItem.eq(itemPosition)
 			.addClass('active').siblings().removeClass('active');
-	})
+	});
+
+// to open single project
+	$('.panel__link').on('click', function(){
+		$(this).parent().addClass('open').siblings().addClass('close');
+		$(this).children().hide();
+	});
+
 });

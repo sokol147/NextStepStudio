@@ -1,6 +1,6 @@
 .main-screen{
 	height: 100vh;
-	width: 100vw;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 }
@@ -12,25 +12,29 @@
 		position: absolute;
 		top:34%;
 	}
-	.nav{
+	.menu{
 		display: flex;
 		justify-content: flex-end;
-		.menu{
+		&__list{
 			color: black;
 			font-size: 20px;
 			text-transform: uppercase;
 			font-weight: 400;
-			&__item{
-				display: inline-block;
-				margin-left: 30px;
-				opacity: 0.6;
-				cursor: pointer;
-				transition: all .5s;
-				&.active, &:hover{
-					color: #000;
-					opacity: 1;
-				}
+		}
+		&__item{
+			display: inline-block;
+			margin-left: 30px;
+			opacity: 0.6;
+			cursor: pointer;
+			transition: all .5s;
+			&_active, &:hover{
+				color: #000;
+				opacity: 1;
 			}
+		}
+		&__link{
+			text-decoration: none;
+			color: #000;
 		}
 	}
 }
@@ -49,28 +53,47 @@
 		background-position: center;
 		color: #fff;
 		position: relative;
-		flex: 1;
+/* 		flex: 1; */
+		width: 16.66%;
 		display: flex;
 		align-items: flex-end;
 		transition: all .4s;
 		border-left: 1px solid white;
 		border-right: 1px solid white;
 		opacity: .4;
+		&:hover{
+/* 			flex: 2; */
+			width: 30%;
+			opacity: 1;
+		}
+		&.open{
+			opacity: 1;
+/* 			flex: 1; */
+			width: 100%;
+			cursor: default;
+			border: none;
+		}
+		&.close{
+			width: 0%;
+			border: none;
+		}
+		&.open > a{
+			cursor: default;
+		}
 		&__link{
 			height: 100%;
+			width: 100%;
+			transition: all .4s;
 			display: flex;
 			align-items: flex-end;
 			text-decoration: none;
-		}
-		&:hover{
-			flex: 2;
-			opacity: 1;
 		}
 		&:hover .panel__content{
 			opacity: 1;
 		}
 		&__content{
 			opacity: 0;
+			width: 100%;
 			padding: 50px 0 45px 30px;
 			background-color: #fff;
 			color: #000;
@@ -98,6 +121,9 @@
 
 // project description
 
+.project-description{
+	display: none;
+}
 .projects-full{
 	.project__content{
 		display: none;
