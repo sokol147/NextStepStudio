@@ -4,7 +4,7 @@ document.body.onload = function(){
 		if(!preloader.classList.contains('done')){
 			preloader.classList.add('done');
 		}
-	}, 4700);
+	}, 470);
 }
 
 $(document).ready(function(){
@@ -21,10 +21,24 @@ $(document).ready(function(){
 			.addClass('active').siblings().removeClass('active');
 	});
 
-// to open single project
+// to open current project
 	$('.panel__link').on('click', function(){
+		$('.panels').css('margin-top', '0px');
 		$(this).parent().addClass('open').siblings().addClass('close');
 		$(this).children().hide();
+		$('.project-description').slideDown();
+
+	});
+
+
+// scroll to project
+	$('.panel').on('click', function(e){
+		e.preventDefault();
+		var scroll_el = $(this).attr('data-href');
+		if ($(scroll_el).length != 0) {
+			$('html, body').animate({ scrollTop: $(scroll_el).offset().top + 50}, 500);
+		}
+		return false;
 	});
 
 });

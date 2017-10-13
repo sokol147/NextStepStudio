@@ -3,37 +3,37 @@
 		{
 			backGround: '../assets/img/projects/project-1.jpg',
 			projectName: 'project-1',
-			shortDescr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, qui.',
+			shortDescr: 'Lorem ipsum dolor sit amet',
 			buttonText: 'showe more',
 			fullDescr: 'Lorem ipsum dolor sit amet. 1'
 		},{
 			backGround: '../assets/img/projects/project-2.jpg',
 			projectName: 'project-2',
-			shortDescr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, qui.',
+			shortDescr: 'Lorem ipsum dolor sit amet',
 			buttonText: 'showe more',
 			fullDescr: 'Lorem ipsum dolor sit amet. 2'
 		},{
 			backGround: '../assets/img/projects/project-3.jpg',
 			projectName: 'project-3',
-			shortDescr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, qui.',
+			shortDescr: 'Lorem ipsum dolor sit amet',
 			buttonText: 'showe more',
 			fullDescr: 'Lorem ipsum dolor sit amet. 3'
 		},{
 			backGround: '../assets/img/projects/project-4.jpg',
 			projectName: 'project-4',
-			shortDescr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, qui.',
+			shortDescr: 'Lorem ipsum dolor sit amet',
 			buttonText: 'showe more',
 			fullDescr: 'Lorem ipsum dolor sit amet. 4'
 		},{
 			backGround: '../assets/img/projects/project-6.jpg',
 			projectName: 'project-5',
-			shortDescr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, qui.',
+			shortDescr: 'Lorem ipsum dolor sit amet',
 			buttonText: 'showe more',
 			fullDescr: 'Lorem ipsum dolor sit amet. 5'
 		},{
 			backGround: '../assets/img/projects/project-5.jpg',
 			projectName: 'project-6',
-			shortDescr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, qui.',
+			shortDescr: 'Lorem ipsum dolor sit amet',
 			buttonText: 'showe-more',
 			fullDescr: 'Lorem ipsum dolor sit amet. 6'
 		}
@@ -41,12 +41,12 @@
 
 .main-screen
 	header.header
-		a(href='#')
+		a(href='http://localhost:3000')
 			img.logo(src='assets/img/logo.svg')
 		+menu('menu', ['projects', 'reviews', 'about', 'contact'], 0)
 	.panels
 		each item in projects
-			.panel(style=`background-image: url(${item.backGround})`)
+			.panel(style=`background-image: url(${item.backGround})` data-href='.panels')
 				a.panel__link(href='#')
 					.panel__content
 						h3.project__name= item.projectName
