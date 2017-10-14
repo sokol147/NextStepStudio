@@ -32,13 +32,24 @@ $(document).ready(function(){
 
 
 // scroll to project
-	$('.panel').on('click', function(e){
+/*	$('.panel').on('click', function(e){
 		e.preventDefault();
 		var scroll_el = $(this).attr('data-href');
 		if ($(scroll_el).length != 0) {
-			$('html, body').animate({ scrollTop: $(scroll_el).offset().top + 50}, 500);
+			$('html, body').animate({ scrollTop: $(scroll_el).offset().top + 30}, 500);
 		}
 		return false;
+	});*/
+
+// parallax for project
+
+	$(window).scroll(function(){
+		var st = $(this).scrollTop();
+
+		$('.project-description').css({
+			'transform' : 'translate(0%,-' + st/10 + '%'
+		})
+
 	});
 
 });

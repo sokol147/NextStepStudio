@@ -5,43 +5,73 @@
 			projectName: 'project-1',
 			shortDescr: 'Lorem ipsum dolor sit amet',
 			buttonText: 'showe more',
-			fullDescr: 'Lorem ipsum dolor sit amet. 1'
+			fullDescr: 'Lorem ipsum dolor sit amet. 1',
+			workType: 'branding',
+			companyName: 'Name',
+			companyInfo: 'Info',
+			companyLogo: ''
 		},{
 			backGround: '../assets/img/projects/project-2.jpg',
-			projectName: 'project-2',
+			projectName: 'wyre',
 			shortDescr: 'Lorem ipsum dolor sit amet',
 			buttonText: 'showe more',
-			fullDescr: 'Lorem ipsum dolor sit amet. 2'
+			fullDescr: 'Lorem ipsum dolor sit amet. 2',
+			workType: 'branding & ecommerce website design',
+			companyName: 'wyre',
+			companyInfo: 'Empowering small business owners through UX with W+K',
+			companyLogo: 'project-2/company_logo',
+			sectionOneName: 'higlights',
+			sectinoOneHeader: 'Designed with deliberate focus',
+			sectinoOneText: 'We designed the new American Express Open App with a simple set of features to accomplish certain targets: simplicity offers an authentic foundation on which to connect digital strategy and user experience; minimalism is the most powerful form to deliver value to the small business owner; we wanted to help SBOs cut through the weeds and save time to concentrate on what matters. Business.',
+			sectinoOneImgSmall: 'project-2/sectinoOne-small-img',
+			sectinoOneImgMid: 'project-2/sectinoOne-mid-img',
+			sectinoOneImgBig: 'project-2/sectinoOne-big-img'
 		},{
 			backGround: '../assets/img/projects/project-3.jpg',
 			projectName: 'project-3',
 			shortDescr: 'Lorem ipsum dolor sit amet',
 			buttonText: 'showe more',
-			fullDescr: 'Lorem ipsum dolor sit amet. 3'
+			fullDescr: 'Lorem ipsum dolor sit amet. 3',
+			workType: 'ecommerce website design',
+			companyName: 'Name',
+			companyInfo: 'Info',
+			companyLogo: ''
 		},{
 			backGround: '../assets/img/projects/project-4.jpg',
 			projectName: 'project-4',
 			shortDescr: 'Lorem ipsum dolor sit amet',
 			buttonText: 'showe more',
-			fullDescr: 'Lorem ipsum dolor sit amet. 4'
+			fullDescr: 'Lorem ipsum dolor sit amet. 4',
+			workType: 'branding & ecommerce website design',
+			companyName: 'Name',
+			companyInfo: 'Info',
+			companyLogo: ''
 		},{
 			backGround: '../assets/img/projects/project-6.jpg',
 			projectName: 'project-5',
 			shortDescr: 'Lorem ipsum dolor sit amet',
 			buttonText: 'showe more',
-			fullDescr: 'Lorem ipsum dolor sit amet. 5'
+			fullDescr: 'Lorem ipsum dolor sit amet. 5',
+			workType: 'ecommerce website design',
+			companyName: 'Name',
+			companyInfo: 'Info',
+			companyLogo: ''
 		},{
 			backGround: '../assets/img/projects/project-5.jpg',
 			projectName: 'project-6',
 			shortDescr: 'Lorem ipsum dolor sit amet',
 			buttonText: 'showe-more',
-			fullDescr: 'Lorem ipsum dolor sit amet. 6'
+			fullDescr: 'Lorem ipsum dolor sit amet. 6',
+			workType: 'ecommerce website design',
+			companyName: 'Name',
+			companyInfo: 'Info',
+			companyLogo: ''
 		}
 	]
 
 .main-screen
 	header.header
-		a(href='http://localhost:3000')
+		a(href='http://155.158.138.222:3000/')
 			img.logo(src='assets/img/logo.svg')
 		+menu('menu', ['projects', 'reviews', 'about', 'contact'], 0)
 	.panels
@@ -52,25 +82,35 @@
 						h3.project__name= item.projectName
 						p.project__descr= item.shortDescr
 						p.project__btn= item.buttonText
+					.panel__content-open
 
 
 .project-description
 	ul.projects-full
-		li.project__content.active
-			.project-wrapper
-				p Lorem ipsum dolor sit amet.1
-		li.project__content
-			.project-wrapper
-				p Lorem ipsum dolor sit amet.2
-		li.project__content
-			.project-wrapper
-				p Lorem ipsum dolor sit amet.3
-		li.project__content
-			.project-wrapper
-				p Lorem ipsum dolor sit amet.4
-		li.project__content
-			.project-wrapper
-				p Lorem ipsum dolor sit amet.5
-		li.project__content
-			.project-wrapper
-				p Lorem ipsum dolor sit amet.6
+		each item in projects
+			li.project__content
+				.project-wrapper
+					.works__type
+						.work__type-text
+							p= item.workType
+					.company
+						.company__name
+							p= item.companyName
+						.company__info
+							p= item.companyInfo
+					.company__logo-full
+						img(src=`/assets/img/${item.companyLogo}.jpg` alt='company logo')
+					.section.section-1
+						.section__info
+							.section__name
+								p= item.sectionOneName
+							.section__text
+								h3= item.sectinoOneHeader
+								p= item.sectinoOneText
+						.sectino__image
+							.image__wrapper
+								.small-img
+									img(src=`/assets/img/${item.sectinoOneImgSmall}.jpg` alt='')
+								.mid-img
+									img(src=`/assets/img/${item.sectinoOneImgMid}.jpg` alt='')
+							img.big-img(src=`/assets/img/${item.sectinoOneImgBig}.jpg` alt='')

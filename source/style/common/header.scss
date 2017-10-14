@@ -30,7 +30,7 @@
 			margin-left: 30px;
 			opacity: 0.6;
 			cursor: pointer;
-			transition: all .5s;
+			transition: all .4s;
 			&_active, &:hover{
 				color: #000;
 				opacity: 1;
@@ -44,7 +44,7 @@
 }
 .panels{
 	overflow: hidden;
-	transition: all .5s;
+	transition: all .4s;
 	margin-top: 89px;
 	height: 100%;
 	display: flex;
@@ -129,13 +129,56 @@
 
 .project-description{
 	display: none;
+	position: relative;
 }
 .projects-full{
+	background-color: #fff;
 	.project__content{
 		display: none;
 		height: 100vh;
 		&.active{
 			display: block;
 		}
+	}
+}
+.project-wrapper{
+	padding-top: 100px;
+	.works__type{
+		border-bottom: 1px solid #000;
+		padding: 0 5%;
+		.work__type-text{
+			margin:0 0 15px 180px;
+			p{
+				font-size: 15px;
+				font-weight: 400;
+				text-transform: uppercase;
+			}
+		}
+	}
+	.company{
+		padding: 80px 5% 60px;
+		display: flex;
+		align-items: center;
+		.company__name{
+			margin-left: 180px;
+			margin-right: 115px;
+			font-size: 150px;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		.company__info{
+			max-width: 585px;
+			font-size: 40px;
+			font-weight: 400;
+			line-height: 60px;
+		}
+	}
+	.company__logo-full{
+		img{
+			max-width: 100%;
+		}
+	}
+	.sectino__image img{
+		max-width: 100%;
 	}
 }
