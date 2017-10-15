@@ -47,9 +47,18 @@ $(document).ready(function(){
 		var st = $(this).scrollTop();
 
 		$('.project-description').css({
-			'transform' : 'translate(0%,-' + st/10 + '%'
-		})
+			'transform' : 'translate(0%,-' + st/100 + '%'
+		});
 
+/*		$('.panel').css({'top': -$(window).scrollTop()/3});*/
 	});
+
+// read more text
+
+	$('.read-more').on('click', function(e){
+		e.preventDefault();
+		$('.read-more-wrapper').slideDown();
+		$(this).hide();
+	})
 
 });
