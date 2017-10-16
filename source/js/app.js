@@ -26,8 +26,8 @@ $(document).ready(function(){
 		$('.panels').css('margin-top', '0px');
 		$(this).parent().addClass('open').siblings().addClass('close');
 		$(this).children().hide();
+		$('.project-description-wrapper').slideDown();
 		$('.project-description').slideDown();
-
 	});
 
 
@@ -50,8 +50,11 @@ $(document).ready(function(){
 			'transform' : 'translate(0%,-' + st/100 + '%'
 		});
 
+		$
+
 /*		$('.panel').css({'top': -$(window).scrollTop()/3});*/
 	});
+
 
 // read more text
 
@@ -60,5 +63,23 @@ $(document).ready(function(){
 		$('.read-more-wrapper').slideDown();
 		$(this).hide();
 	})
+
+// back to all btn
+
+	$('.btn-back').on('click',function(){
+		$('.panels').css('margin-top', '89px');
+		$('.panel').removeClass('open').removeClass('close');
+		$('.project-description-wrapper').slideUp();
+		$('.project-description').slideUp();
+	})
+
+
+// next project btn
+
+	$('.btn-next').on('click', function(){
+		if($('.panel').hasClass('open')){
+
+		}
+	});
 
 });

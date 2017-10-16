@@ -22,7 +22,10 @@
 			theerdTextBlockText2: 'What does it mean to focus on the customer experience of eCommerce? One contributing factor is how we present the product throughout the user journey from browsing to purchase. The eCommerce product listing pages and product detail pages are designed to provide context and motivation through original creative content, such as videos, trends, collection call-outs, and branded imagery.',
 			theerdTextBlockText3: 'What does it mean to focus on the customer experience of eCommerce? One contributing factor is how we present the product throughout the user journey from browsing to purchase. The eCommerce product listing pages and product detail pages are designed to provide context and motivation through original creative content, such as videos, trends, collection call-outs, and branded imagery.',
 			mainGalleryImg: 'project-2/mainGallery.jpg',
-			galleryName: 'Gallery'
+			galleryName: 'Gallery',
+			nextProjectName: 'project-2',
+			nextProjectType: 'Lorem ipsum dolor sit amet, consectetur adipisicing',
+			nextProjectImage: '../assets/img/project-1/nextProject.jpg'
 		},{
 			backGround: '../assets/img/projects/project-2.jpg',
 			projectName: 'wyre',
@@ -30,7 +33,7 @@
 			buttonText: 'showe more',
 			fullDescr: 'Lorem ipsum dolor sit amet. 2',
 			companyName: 'wyre',
-			companyType: 'Empowering small business owners through UX with W+K',
+			companyType: 'Its amazing how few small businesses have an accurate idea of the daily, weekly and monthly numbers.',
 			companyLogo: 'project-2/company_logo.jpg',
 			firstTextBlockName: 'highlights',
 			firstTextBlockHeader: 'Designed with deliberate focus',
@@ -51,31 +54,46 @@
 			galleryLeftThree: 'project-2/galleryLeftThree.jpg',
 			galleryRightOne: 'project-2/galleryRightOne.jpg',
 			galleryRightTwo: 'project-2/galleryRightTwo.jpg',
-			galleryRightThree: 'project-2/galleryRightThree.jpg'
+			galleryRightThree: 'project-2/galleryRightThree.jpg',
+			nextProjectName: 'project-3',
+			nextProjectType: 'Branding and ecomerce website design. Create perfect solution.',
+			nextProjectImage: '../assets/img/project-2/nextProject.jpg'
 		},{
 			backGround: '../assets/img/projects/project-3.jpg',
 			projectName: 'project-3',
 			shortDescr: 'Lorem ipsum dolor sit amet',
 			buttonText: 'showe more',
 			fullDescr: 'Lorem ipsum dolor sit amet. 3',
+			nextProjectName: 'project-4',
+			nextProjectType: 'Lorem ipsum dolor sit amet, consectetur adipisicing',
+			nextProjectImage: '../assets/img/project-3/nextProject.jpg'
 		},{
 			backGround: '../assets/img/projects/project-4.jpg',
 			projectName: 'project-4',
 			shortDescr: 'Lorem ipsum dolor sit amet',
 			buttonText: 'showe more',
 			fullDescr: 'Lorem ipsum dolor sit amet. 4',
+			nextProjectName: 'project-5',
+			nextProjectType: 'Lorem ipsum dolor sit amet, consectetur adipisicing',
+			nextProjectImage: '../assets/img/project-4/nextProject.jpg'
 		},{
 			backGround: '../assets/img/projects/project-6.jpg',
 			projectName: 'project-5',
 			shortDescr: 'Lorem ipsum dolor sit amet',
 			buttonText: 'showe more',
 			fullDescr: 'Lorem ipsum dolor sit amet. 5',
+			nextProjectName: 'project-6',
+			nextProjectType: 'Lorem ipsum dolor sit amet, consectetur adipisicing',
+			nextProjectImage: '../assets/img/project-5/nextProject.jpg'
 		},{
 			backGround: '../assets/img/projects/project-5.jpg',
 			projectName: 'project-6',
 			shortDescr: 'Lorem ipsum dolor sit amet',
 			buttonText: 'showe-more',
 			fullDescr: 'Lorem ipsum dolor sit amet. 6',
+			nextProjectName: 'project-1',
+			nextProjectType: 'Lorem ipsum dolor sit amet, consectetur adipisicing',
+			nextProjectImage: '../assets/img/project-6/nextProject.jpg'
 		}
 	]
 
@@ -94,59 +112,68 @@
 						p.project__btn= item.buttonText
 					.panel__content-open
 
-
-.project-description
-	ul.projects-full
-		each item in projects
-			li.project__content
-				.project-wrapper
-					.project__description
-						.company-info
-							.company-name
-								p= item.companyName
-							.company-type
-								p= item.companyType
-						img.project__logo(src=`/assets/img/${item.companyLogo}` alt='company logo')
-						.creative-process
-							.textBlock.textBlock__first
-								.textBlock-name
-									p= item.firstTextBlockName
-								.textBlock-descr
-									h3.textBlock-header= item.firstTextBlockHeader
-									p.textBlock-text=item.firstTextBlockText
-							.imgBlock
-								.imgBlock__small
-									img(src=`/assets/img/${item.imgSmall}` alt='')
-								.imgBlock__big
-									img(src=`/assets/img/${item.imgBig}` alt='')
-							.textBlock.textBlock__second
-								.textBlock-name
-									p= item.secondTextBlockName
-								.textBlock-descr
-									h3.textBlock-header= item.secondTextBlockHeader
-									p.textBlock-text=item.secondTextBlockText
-									.textBlock-read-more
-										h3.textBlock-header= item.theerdTextBlockHeader
-										p.textBlock-text=item.theerdTextBlockText1
-										.read-more-wrapper
-											p.textBlock-text=item.theerdTextBlockText2
-											p.textBlock-text=item.theerdTextBlockText3
-										a.btn.read-more Read the story
-					.main-gallery-img
-						img(src=`/assets/img/${item.mainGalleryImg}` alt='')
-					.project__gallery
-						.gallery__column.gallery__column-1
-							.gallery__column-name= item.galleryName
-							.galleryImageContainer
-								img(src=`/assets/img/${item.galleryLeftOne}` alt='')
-							.galleryImageContainer
-								img(src=`/assets/img/${item.galleryLeftTwo}` alt='')
-							.galleryImageContainer
-								img(src=`/assets/img/${item.galleryLeftThree}` alt='')
-						.gallery__column.gallery__column-2
-							.galleryImageContainer
-								img(src=`/assets/img/${item.galleryRightOne}` alt='')
-							.galleryImageContainer
-								img(src=`/assets/img/${item.galleryRightTwo}` alt='')
-							.galleryImageContainer
-								img(src=`/assets/img/${item.galleryRightThree}` alt='')
+.project-description-wrapper
+	.project-description
+		ul.projects-full
+			each item in projects
+				li.project__content
+					.project-wrapper
+						.project__description
+							.company-info
+								.company-name
+									p= item.companyName
+								.company-type
+									p= item.companyType
+							img.project__logo(src=`/assets/img/${item.companyLogo}` alt='company logo')
+							.creative-process
+								.textBlock.textBlock__first
+									.textBlock-name
+										p= item.firstTextBlockName
+									.textBlock-descr
+										h3.textBlock-header= item.firstTextBlockHeader
+										p.textBlock-text=item.firstTextBlockText
+								.imgBlock
+									.imgBlock__small
+										img(src=`/assets/img/${item.imgSmall}` alt='')
+									.imgBlock__big
+										img(src=`/assets/img/${item.imgBig}` alt='')
+								.textBlock.textBlock__second
+									.textBlock-name
+										p= item.secondTextBlockName
+									.textBlock-descr
+										h3.textBlock-header= item.secondTextBlockHeader
+										p.textBlock-text=item.secondTextBlockText
+										.textBlock-read-more
+											h3.textBlock-header= item.theerdTextBlockHeader
+											p.textBlock-text=item.theerdTextBlockText1
+											.read-more-wrapper
+												p.textBlock-text=item.theerdTextBlockText2
+												p.textBlock-text=item.theerdTextBlockText3
+											a.btn.read-more Read the story
+						.main-gallery-img
+							img(src=`/assets/img/${item.mainGalleryImg}` alt='')
+						.project__gallery
+							.gallery__column.gallery__column-1
+								.gallery__column-name= item.galleryName
+								.galleryImageContainer
+									img(src=`/assets/img/${item.galleryLeftOne}` alt='')
+								.galleryImageContainer
+									img(src=`/assets/img/${item.galleryLeftTwo}` alt='')
+								.galleryImageContainer
+									img(src=`/assets/img/${item.galleryLeftThree}` alt='')
+							.gallery__column.gallery__column-2
+								.galleryImageContainer
+									img(src=`/assets/img/${item.galleryRightOne}` alt='')
+								.galleryImageContainer
+									img(src=`/assets/img/${item.galleryRightTwo}` alt='')
+								.galleryImageContainer
+									img(src=`/assets/img/${item.galleryRightThree}` alt='')
+					.nextProject
+						.nextProject__text
+							.nextProject__back
+								a.btn.btn-back(href='#') Back to all
+							.nextProject__next
+								h3= item.nextProjectName
+								p= item.nextProjectType
+								a.btn.btn-next(href='#') Next project
+						.nextProject__img(style=`background-image: url(${item.nextProjectImage})`)
