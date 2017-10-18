@@ -10,6 +10,7 @@
 	z-index: 10;
 	width: 100%;
 	opacity: .95;
+	/* box-shadow: 1px -1px 13px 5px rgba(0,0,0,0.48); */
 	.logo{
 		position: absolute;
 		top: 34%;
@@ -23,11 +24,11 @@
 			color: black;
 			font-size: 20px;
 			text-transform: uppercase;
-			font-weight: 300;
+			font-weight: 500;
 		}
 		&__item{
 			display: inline-block;
-			margin-left: 30px;
+			margin-left: 50px;
 			opacity: 0.6;
 			cursor: pointer;
 			transition: all .4s;
@@ -79,22 +80,23 @@
 			cursor: default;
 			border: none;
 /* 			position: fixed;
-top: 0;
-left: 0;
-right: 0;
-height: 100%; */
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 100%; */
 		}
 		&.close{
 			width: 0%;
 			border: none;
 		}
-		&.open > a{
+		&.open > div{
 			cursor: default;
 		}
 		&__link{
 			height: 100%;
 			width: 100%;
 			transition: all .4s;
+			cursor: pointer;
 			display: flex;
 			align-items: flex-end;
 			text-decoration: none;
@@ -109,6 +111,74 @@ height: 100%; */
 			background-color: #fff;
 			color: #000;
 			transition: all .4s;
+			&-open{
+				display: none;
+				width: 100%;
+				padding-bottom: 50px;
+				.open-wrapper{
+					display: flex;
+					align-items: center;
+					padding: 0 5%;
+					justify-content: space-between;
+					.panel__open-back{
+						display: flex;
+						align-items: center;
+						.btn-back{
+							display: inline-block;
+							font-size: 12px;
+							padding: 14px 36px;
+							border: 1px solid #000;
+							font-weight: 400;
+							text-decoration: none;
+							color: #000;
+							background-color: #fff;
+							text-wrap: nowrap;
+							&:hover{
+								background-color: #ff5f3b;
+								color: #fff;
+								border: 1px solid #ff5f3b;
+							}
+						}
+						h3{
+							font-size: 54px;
+							font-weight: bold;
+							color: #000;
+							text-transform: uppercase;
+							margin: 0 0 0 35px;
+						}
+						p{
+							font-size: 18px;
+							line-height: 27px;
+							max-width: 300px;
+							font-weight: 600;
+							color: #000;
+							margin-left: 30px;
+						}
+					}
+					.btn-next{
+						display: inline-block;
+						font-size: 12px;
+						padding: 14px 36px;
+						border: 1px solid #000;
+						font-weight: 400;
+						text-decoration: none;
+						color: #000;
+						margin-left: 80px;
+						background-color: #fff;
+						text-wrap: nowrap;
+						&:after{
+							content: '\f105';
+							font-family: 'FontAwesome';
+							margin-left: 5px;
+						}
+						&:hover{
+							background-color: #ff5f3b;
+							color: #fff;
+							border: 1px solid #ff5f3b;
+						}
+					}
+				}
+			}
 		}
 		.project__name{
 			font-weight: bold;
