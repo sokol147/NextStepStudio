@@ -17,8 +17,12 @@ $(document).ready(function(){
 				contentItem = $('.project__content'),
 				itemPosition = item.index();
 
-		contentItem.eq(itemPosition)
+		if($('.panel').hasClass('open')){
+
+		} else {
+			contentItem.eq(itemPosition)
 			.addClass('active').siblings().removeClass('active');
+		}
 	});
 
 // to open current project
@@ -87,11 +91,23 @@ if($('.panel').hasClass('open')){
 // next project btn
 
 	$('.btn-next').on('click', function(){
-		$('.panel.open').removeClass('open').addClass('close').next().addClass('open').removeClass('close');
+		if($('.panel').last().hasClass('open')){
+			$('.panel').last().addClass('close').removeClass('open');
+			$('.panel').first().addClass('open').removeClass('close');
+		} else {
+			$('.panel.open').removeClass('open').addClass('close').next().addClass('open').removeClass('close');
+		}
 		if($('.panel').hasClass('open')){
 			$('.panel__content').hide();
 		}
-		
+		if($('.project__content').last().hasClass('active')){
+			$('.project__content').last().removeClass('active');
+			$('.project__content').first().addClass('active');
+		} else {
+			$('.project__content.active').removeClass('active').next().addClass('active');
+		}
 	});
+
+
 
 });

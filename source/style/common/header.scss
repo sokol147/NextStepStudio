@@ -132,7 +132,7 @@
 							text-decoration: none;
 							color: #000;
 							background-color: #fff;
-							text-wrap: nowrap;
+							white-space: nowrap;
 							&:hover{
 								background-color: #ff5f3b;
 								color: #fff;
@@ -145,6 +145,7 @@
 							color: #000;
 							text-transform: uppercase;
 							margin: 0 0 0 35px;
+							white-space: nowrap;
 						}
 						p{
 							font-size: 18px;
@@ -153,6 +154,7 @@
 							font-weight: 600;
 							color: #000;
 							margin-left: 30px;
+							white-space: nowrap;
 						}
 					}
 					.btn-next{
@@ -165,7 +167,7 @@
 						color: #000;
 						margin-left: 80px;
 						background-color: #fff;
-						text-wrap: nowrap;
+						white-space: nowrap;
 						&:after{
 							content: '\f105';
 							font-family: 'FontAwesome';
