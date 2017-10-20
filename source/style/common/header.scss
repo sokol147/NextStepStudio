@@ -113,6 +113,10 @@
 			transition: all .4s;
 			&-open{
 				display: none;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
 				width: 100%;
 				padding-bottom: 50px;
 				.open-wrapper{

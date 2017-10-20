@@ -33,7 +33,7 @@ $(document).ready(function(){
 		} else {
 			$('.panels').css('margin-top', '0px');
 			$(this).parent().addClass('open').siblings().addClass('close');
-			$(this).children().hide();
+			$('.panel__link').children().hide();
 			$('.panel__content-open').fadeIn('1000');
 			$('.project-description-wrapper').slideDown();
 			$('.project-description').slideDown();
@@ -59,8 +59,6 @@ $(document).ready(function(){
 		$('.project-description').css({
 			'transform' : 'translate(0%,-' + st/100 + '%'
 		});
-
-		$
 
 /*		$('.panel').css({'top': -$(window).scrollTop()/3});*/
 	});
