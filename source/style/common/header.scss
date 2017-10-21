@@ -10,28 +10,89 @@
 	z-index: 10;
 	width: 100%;
 	opacity: .95;
-	/* box-shadow: 1px -1px 13px 5px rgba(0,0,0,0.48); */
+	height: 89px;
+	box-shadow: -3px -4px 18px 7px rgba(0,0,0,0.07);
 	.logo{
 		position: absolute;
-		top: 34%;
+		top: 32%;
 		left: 5%;
+		height: 30px;
+	}
+	.menu__icon{
+		position: absolute;
+		right: 5%;
+		top: 32%;
+		display: none;
+		height: 30px;
+		width: 30px;
+		z-index: 10;
+		span, span:before, span:after{
+			display: block;
+			height: 2px;
+			width: 26px;
+			background-color: #000;
+			position: absolute;
+			left: 50%;
+			margin-left: -13px;
+			top: 50%;
+			margin-top: -1px;
+			border-radius: 5px;
+		}
+		span:before{
+			content:'';
+			transition: all 0.2s;
+			margin-top: -6px;
+		}
+		span:after{
+			content: '';
+			transition: all 0.2s;
+			margin-top: 4px;
+		}
+		&-active span{
+			background-color: transparent;
+			&:before{
+				transform: rotate(45deg);
+				margin-top: 0;
+			}
+			&:after{
+				transform: rotate(-45deg);
+				margin-top: 0;
+			}
+		}
 	}
 	.menu{
 		display: flex;
 		padding: 34px 5%;
 		justify-content: flex-end;
 		&__list{
+			display: block;
 			color: black;
 			font-size: 20px;
 			text-transform: uppercase;
-			font-weight: 500;
+			font-weight: 400;
 		}
 		&__item{
 			display: inline-block;
-			margin-left: 50px;
+			position: relative;
+			padding: 0 10px;
+			margin-left: 30px;
 			opacity: 0.6;
 			cursor: pointer;
 			transition: all .4s;
+			.crossline{
+				opacity: 1;
+				position: absolute;
+				height: 1px;
+				background-color: #000;
+				width: 0;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			&:hover .crossline{
+				animation: crossline .3s linear;
+				width: 100%;
+			}
 			&_active, &:hover{
 				color: #000;
 				opacity: 1;
@@ -41,6 +102,15 @@
 			text-decoration: none;
 			color: #000;
 		}
+	}
+}
+// crossline animation
+@keyframes crossline{
+	0%{
+		width: 0%;
+	}
+	100%{
+		width: 100%;
 	}
 }
 .panels{
@@ -107,7 +177,7 @@
 		&__content{
 			opacity: 0;
 			width: 100%;
-			padding: 50px 0 45px 30px;
+			padding: 50px 30px 45px 30px;
 			background-color: #fff;
 			color: #000;
 			transition: all .4s;
@@ -127,6 +197,10 @@
 					.panel__open-back{
 						display: flex;
 						align-items: center;
+						.projectName-wrapper{
+							display: flex;
+							align-items: center;
+						}
 						.btn-back{
 							display: inline-block;
 							font-size: 12px;
@@ -146,7 +220,6 @@
 						h3{
 							font-size: 54px;
 							font-weight: bold;
-							color: #000;
 							text-transform: uppercase;
 							margin: 0 0 0 35px;
 							white-space: nowrap;
@@ -154,11 +227,9 @@
 						p{
 							font-size: 18px;
 							line-height: 27px;
-							max-width: 300px;
+							width: 300px;
 							font-weight: 600;
-							color: #000;
 							margin-left: 30px;
-							white-space: nowrap;
 						}
 					}
 					.btn-next{
@@ -288,21 +359,27 @@
 					font-weight: 300;
 					line-height: 40px;
 					font-size: 18px;
+					margin-right: 150px;
 				}
 			}
 		}
 		.imgBlock{
-			img{
-				max-width: 100%;
-				margin-bottom: 150px;
-			}
 			display: flex;
+			padding-bottom: 150px;
 			.imgBlock__small{
 				width: 33.1%;
+				height: 830px;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
 			}
 			.imgBlock__big{
 				width: 66.9%;
-				padding-left: 50px;
+				margin-left: 50px;
+				height: 830px;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
 			}
 		}
 	}
@@ -312,7 +389,6 @@
 	}
 }
 .main-gallery-img{
-	padding: 0 5%;
 	margin-bottom: 50px;
 	img{
 		max-width: 100%;
@@ -327,7 +403,7 @@
 	padding: 0 5%;
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 200px;
+	margin-bottom: 150px;
 	.gallery__column{
 		width: calc(50% - 25px);
 	}
@@ -355,7 +431,7 @@
 	display: flex;
 	flex-direction: column;
 	&__text{
-		padding: 100px 5%;
+		padding: 20px 5%;
 		display: flex;
 		justify-content: space-between;
 		.nextProject__back{
@@ -422,4 +498,18 @@
 	position: relative;
 	display: none;
 	height: 100vh;
+}
+
+@media only screen and (max-width: 1200px){
+
+}
+@media only screen and (max-width: 992px){
+	.header{
+		.menu__icon{
+			display: block;
+		}
+		.menu__list{
+			display: none;
+		}
+	}
 }

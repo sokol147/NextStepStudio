@@ -4,10 +4,18 @@ document.body.onload = function(){
 		if(!preloader.classList.contains('done')){
 			preloader.classList.add('done');
 		}
-	}, 470);
+	}, 4700);
 }
 
 $(document).ready(function(){
+
+// menu btn
+
+	$('.menu__icon').on('click', function(e){
+		e.preventDefault();
+		$(this).toggleClass('menu__icon-active');
+		$('.menu').toggleClass('menu-active');
+	});
 
 // tabs for projects
 	$('.panel__link').on('click', function(e){
