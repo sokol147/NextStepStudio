@@ -11,6 +11,9 @@ ul,li{
 p{
 	margin: 0;
 }
+$main-color: #ff5f3b;
+
 @import 'common/preloader';
-@import 'common/header';
+@import 'common/panels';
 @import 'common/nextProject';
+@import 'common/contact';

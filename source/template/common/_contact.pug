@@ -1,0 +1,59 @@
+- var formHeader = 'Directly reach us filling form'
+-
+	var formInput = [
+		{
+			InputLabel: 'Hi there, my name is',
+			InputPlaceholder: 'How people call you',
+			inputId: 'name'
+		},{
+			InputLabel: 'I want to speak about',
+			InputPlaceholder: 'Theme of the project, problem',
+			inputId: 'work'
+		},{
+			InputLabel: 'You can contact me with',
+			InputPlaceholder: 'E-mail, Phone or Skype',
+			inputId: 'conect'
+		}
+	]
+-
+	var contacts = [
+		{
+			contactsHeader: 'E-mail:',
+			contactsText: 'hello@nextstep.com'
+		},{
+			contactsHeader: 'Skype',
+			contactsText: 'creative.concept'
+		}
+	]
+- var btnSubmiteText = 'Submite'
+- var contactInfoHeader = 'Tired of filling forms ?'
+
+header.header
+	a(href='http://155.158.138.222:3000/')
+		img.logo(src='assets/img/logo.png')
+	+menu('menu', ['projects', 'reviews', 'about', 'contact'], 3)
+	a.menu__icon(href='#')
+		span
+section.main-form
+	.formContent
+		.formContent__text
+			h2= formHeader
+		.formContent__form
+			form.contact-form
+				each item in formInput
+					.field-container
+						.label-wrapper
+							label(for=`${item.inputId}`)= item.InputLabel
+						.input-wrapper
+							.input-placeholder= item.InputPlaceholder
+							input(type='text' id=`${item.inputId}`)
+				.submite-wrapper
+					a.btn.btn-submite(href='#')= btnSubmiteText
+	.contactInfo
+		.contactInfo__header
+			h3= contactInfoHeader
+		.contactInfo__text
+			each item in contacts
+				.contact__info
+					p.contact__info-header= item.contactsHeader
+					p.contact__info-text= item.contactsText
