@@ -27,6 +27,9 @@
 	]
 - var btnSubmiteText = 'Submite'
 - var contactInfoHeader = 'Tired of filling forms ?'
+- var bigBtnText = 'Schedule a free consultation'
+- var formConfirmHeader = 'Your message is in our Top Priority Inbox'
+- var formConfirmText = 'We will reach you soon on GMT +3 working time.'
 
 header.header
 	a(href='http://155.158.138.222:3000/')
@@ -49,6 +52,11 @@ section.main-form
 							input(type='text' id=`${item.inputId}`)
 				.submite-wrapper
 					a.btn.btn-submite(href='#')= btnSubmiteText
+			.form-confirm
+				.form-confirm__header
+					h4= formConfirmHeader
+				.form-confirm__text
+					p= formConfirmText
 	.contactInfo
 		.contactInfo__header
 			h3= contactInfoHeader
@@ -57,3 +65,5 @@ section.main-form
 				.contact__info
 					p.contact__info-header= item.contactsHeader
 					p.contact__info-text= item.contactsText
+	.big-btn-wrapper
+		a(href='#').btn-big= bigBtnText
