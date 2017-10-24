@@ -114,6 +114,24 @@ if($('.panel').hasClass('open')){
 		}
 	});
 
+// form confirm
 
+	$('.btn-submite').on('click', function(e){
+		e.preventDefault();
+
+		$('.form-confirm-wrapper').fadeIn();
+		setTimeout(function(){
+			$('.form-confirm-wrapper').fadeOut();
+		}, 8000);
+		setTimeout(function(){
+			$('.field-container input[type="text"]').val('');
+		}, 4000);
+		$('.input-placeholder').show();
+	});
+
+	$('.input-placeholder').on('click', function(){
+		$(this).hide();
+		$(this).next().focus();
+	});
 
 });
