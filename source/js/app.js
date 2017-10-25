@@ -125,13 +125,18 @@ if($('.panel').hasClass('open')){
 		}, 8000);
 		setTimeout(function(){
 			$('.field-container input[type="text"]').val('');
+			$('.input-placeholder').show();
 		}, 4000);
-		$('.input-placeholder').show();
 	});
 
 	$('.input-placeholder').on('click', function(){
 		$(this).hide();
 		$(this).next().focus();
 	});
+	$('.form-input').on('click', function(){
+		$(this).prev().hide();
+	});
+
+
 
 });

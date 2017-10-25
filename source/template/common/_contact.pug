@@ -31,6 +31,29 @@
 - var formConfirmHeader1 = 'Your message is in our'
 - var formConfirmHeader2 = 'Top Priority Inbox'
 - var formConfirmText = 'We will reach you soon on GMT +3 working time.'
+- var modalFooterHeader = '15 Minute Introduction Meeting'
+- var modalFooterText = 'At this call, we will spend some time to understand your problems and define if we are a good fit to solve them.'
+-
+	var modalForm = [
+		{
+			modalInputLabel: 'Hi there, my name is',
+			modalInputPlaceholder: 'How people call you',
+			modalInputId: 'name'
+		},{
+			modalInputLabel: 'I want to speak about',
+			modalInputPlaceholder: 'Theme of the project, problem',
+			modalInputId: 'work'
+		},{
+			modalInputLabel: 'I want to speak about',
+			modalInputPlaceholder: 'Theme of the project, problem',
+			modalInputId: 'time'
+		},{
+			modalInputLabel: 'I want to speak about',
+			modalInputPlaceholder: 'Theme of the project, problem',
+			modalInputId: 'contact'
+		}
+	]
+- var modalFormBtn = 'Schedule event'
 
 header.header
 	a(href='http://155.158.138.222:3000/')
@@ -50,7 +73,7 @@ section.main-form
 							label(for=`${item.inputId}`)= item.InputLabel
 						.input-wrapper
 							.input-placeholder= item.InputPlaceholder
-							input(type='text' id=`${item.inputId}`)
+							input.form-input(type='text' id=`${item.inputId}`)
 				.submite-wrapper
 					a.btn.btn-submite(href='#')= btnSubmiteText
 			.form-confirm-wrapper
@@ -60,13 +83,34 @@ section.main-form
 						h4= formConfirmHeader2
 					.form-confirm__text
 						p= formConfirmText
-	.contactInfo
-		.contactInfo__header
-			h3= contactInfoHeader
-		.contactInfo__text
-			each item in contacts
-				.contact__info
-					p.contact__info-header= item.contactsHeader
-					p.contact__info-text= item.contactsText
-	//- .big-btn-wrapper
-	//- 	a(href='#').btn-big= bigBtnText
+	.big-btn-wrapper
+		a(href='#').btn-big= bigBtnText
+.contactInfo
+	.contactInfo__header
+		h3= contactInfoHeader
+	.contactInfo__text
+		each item in contacts
+			.contact__info
+				p.contact__info-header= item.contactsHeader
+				p.contact__info-text= item.contactsText
+section.modal-form
+	.modal-form__box
+		.modal-form__wrapper
+			.modal-form__content
+				a.btn-form-close(href='#') x
+				.modal-form__body
+					.modal-form__header
+						h2= bigBtnText
+					.modal-form__form
+						form.madal-form__contact
+							each item in modalForm
+								.field-container
+									.label-wrapper
+										label(for=`${item.modalInputId}`)= item.modalInputLabel
+									.input-wrapper
+										.input-placeholder= item.modalInputPlaceholder
+										input.form-input(type='text' id=`${item.modalInputId}`)
+							a.btn.btn-modal-form(href='#')= modalFormBtn
+				.modal-form__footer
+					h4= modalFooterHeader
+					p= modalFooterText
