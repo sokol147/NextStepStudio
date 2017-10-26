@@ -97,7 +97,7 @@ section.modal-form
 	.modal-form__box
 		.modal-form__wrapper
 			.modal-form__content
-				a.btn-form-close(href='#') x
+				a.btn-form-close(href='#')
 				.modal-form__body
 					.modal-form__header
 						h2= bigBtnText
@@ -110,7 +110,8 @@ section.modal-form
 									.input-wrapper
 										.input-placeholder= item.modalInputPlaceholder
 										input.form-input(type='text' id=`${item.modalInputId}`)
-							a.btn.btn-modal-form(href='#')= modalFormBtn
+				.submite-wrapper
+					a.btn.btn-modal-form(href='#')= modalFormBtn
 				.modal-form__footer
 					h4= modalFooterHeader
 					p= modalFooterText
